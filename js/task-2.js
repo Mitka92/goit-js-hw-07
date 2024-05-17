@@ -26,7 +26,7 @@ const images = [
 ];
 function imageTemplate(images) {
   let result = "";
-  for (let i = 0; i < images.length; i++) {
+  for (let i = 0; i < 3; i++) {
     result += `<li class="img-item">
   <img src="${images[i].url}" alt"${images[i].alt}"  width="600px"/>
 </li>\n`;
@@ -37,10 +37,3 @@ function imageTemplate(images) {
 const markup = imageTemplate(images);
 const ulElem = document.querySelector(".gallery");
 ulElem.insertAdjacentHTML("afterbegin", markup);
-// styles
-ulElem.style.display = "flex";
-ulElem.style.flexWrap = "wrap";
-ulElem.style.listStyleType = "none";
-ulElem.style.alignItems = "center";
-ulElem.style.gap = "40px";
-ulElem.style.justifyContent = "center";
