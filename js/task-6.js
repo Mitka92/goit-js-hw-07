@@ -4,6 +4,9 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 function createBoxes(amount) {
+  if (amount < 1 || amount > 100) {
+    return;
+  }
   let markup = "";
   let width = 30;
   let height = 30;
@@ -12,10 +15,8 @@ function createBoxes(amount) {
     markup += `<div style="width: ${width}px; height: ${height}px; background-color:${backgroundColor};"></div>\n`;
     width += 10;
     height += 10;
-    if (amount >= 1 && amount <= 100) {
-      boxesElem.innerHTML = markup;
-    }
   }
+  boxesElem.innerHTML = markup;
 }
 function destroyBoxes() {
   boxesElem.innerHTML = "";

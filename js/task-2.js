@@ -25,15 +25,15 @@ const images = [
   },
 ];
 
-function createMarkup(images) {
-  let markup = "";
-  for (let i = 0; i < 3; i++) {
-    markup += `<li class="img-item">
-  <img class="gallery-img" src="${images[i].url}" alt"${images[i].alt} />
+function createMarkup(arr) {
+  let result = "";
+  for (let i = 0; i < arr.length; i++) {
+    result += `<li class="img-item">
+  <img class="gallery-img" src="${images[i].url}" alt="${images[i].alt}" />
 </li>\n`;
   }
-  return markup;
+  return result;
 }
-
+const markup = createMarkup(images);
 const ulElem = document.querySelector(".gallery");
-ulElem.insertAdjacentHTML("afterbegin", createMarkup(images));
+ulElem.insertAdjacentHTML("afterbegin", markup);
