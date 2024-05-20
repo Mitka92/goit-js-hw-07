@@ -12,7 +12,7 @@ const images = [
     alt: "Group of Horses Running",
   },
   {
-    url: "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg",
+    url: "https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_c.jpg",
     alt: "Alpine Spring Meadows",
   },
   {
@@ -24,16 +24,16 @@ const images = [
     alt: "Lighthouse Coast Sea",
   },
 ];
-function imageTemplate(images) {
-  let result = "";
+
+function createMarkup(images) {
+  let markup = "";
   for (let i = 0; i < 3; i++) {
-    result += `<li class="img-item">
-  <img src="${images[i].url}" alt"${images[i].alt}"  width="600px"/>
+    markup += `<li class="img-item">
+  <img class="gallery-img" src="${images[i].url}" alt"${images[i].alt} />
 </li>\n`;
   }
-  return result;
+  return markup;
 }
 
-const markup = imageTemplate(images);
 const ulElem = document.querySelector(".gallery");
-ulElem.insertAdjacentHTML("afterbegin", markup);
+ulElem.insertAdjacentHTML("afterbegin", createMarkup(images));

@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+ul{list-style-type: none;}
 
 body {
   margin: 16px;
@@ -14,10 +15,19 @@ body {
 }
 
 .gallery{
-  list-style-type: none;
+  min-width: 600px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-  justify-content: center;
+ row-gap: 48px;
+ column-gap: 24px;
+  justify-content:center;
+  background-color: rgb(184, 215, 222);
+padding: 20px;
+}
+.gallery-img{
+display: block;
+object-fit: cover;
+width: 600px;
+height: 400px;
+border-radius: 10px;
 }
